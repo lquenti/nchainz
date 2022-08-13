@@ -5,11 +5,9 @@ from types import FunctionType
 
 def chainz(f):
     @wraps(f)
-    def wrap(*args, **kwargs):
-        print("before")
-        res = f(*args, **kwargs)
-        print("after")
-        return res
+    def wrap(self, *args, **kwargs):
+        res = f(self, *args, **kwargs)
+        return self if res is None else res
     return wrap
 
 # https://web.archive.org/web/20200124090402id_/http://www.voidspace.org.uk/python/articles/metaclasses.shtml#a-method-decorating-metaclass
@@ -29,4 +27,8 @@ if __name__ == "__main__":
     class A(metaclass=Chainz):
         def f(self, a,b):
             print(a+b)
-    A().f(2,3)
+        def g(self, a, b):
+            return a+b
+        def __str__(self):
+            return "haha"
+    print(A().f(5,6).f(6,6).g(1,1))
