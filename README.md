@@ -1,4 +1,4 @@
-# Like 2 Chainz but better
+# (WIP, ignore for now) Like 2 Chainz but better
 
 A metaclass for automatic method chaining. (Only for methods that return `None`, obviously)
 
