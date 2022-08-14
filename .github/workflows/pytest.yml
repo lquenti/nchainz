@@ -17,4 +17,4 @@ jobs:
       - name: install everything with poetry
         run: poetry install -v
       - name: Run tox
-        run: poetry run tox
+        run: poetry run pytest
