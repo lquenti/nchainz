@@ -1,6 +1,23 @@
-# (WIP, ignore for now) Like 2 Chainz but better
-
+# nchainz - Automatic Method Chaining in Python
 A metaclass for automatic method chaining. (Only for methods that return `None`, obviously)
+
+```python
+from nchainz import Chainz
+
+class A(metaclass=Chainz):
+
+  def has_return_value(self):
+    return 4
+
+  def this_is_chainable(self):
+    print("hello")
+    # implicitly returns self
+
+a = A()
+assert a = a.this_is_chainable().this_is_chainable()
+assert a.has_return_value() == 4
+```
+
 
 ## What is Method Chaining?
 
@@ -9,7 +26,7 @@ between methods which are changing the state.
 
 For example, in JS one can just chain the array transformations like
 
-```
+```JS
 [1,2,3,4,5,6].filter(x => x % 2 == 0).map(x => x * x).find(x => x > 30)
 ```
 
@@ -17,7 +34,7 @@ For example, in JS one can just chain the array transformations like
 
 Pretty easy. You just return `self`. Here is an example:
 
-```
+```python
 class MyNum:
   def __init__(self, x):
     self.x = x
@@ -40,13 +57,16 @@ pip install nchainz
 
 Just use the `Chainz` metaclass:
 
-```
-class MyClass(metaclass=Chainz)
+```python
+from nchainz import Chainz
+
+class MyClass(metaclass=Chainz):
+  ...
 ```
 
 ## Why? Like seriously, Why?
 
-I had my 5 minutes
+I had my 5 minutes, I am sorry.
 
 ## Further reading
 
