@@ -14,7 +14,7 @@ class A(metaclass=Chainz):
     # implicitly returns self
 
 a = A()
-assert a = a.this_is_chainable().this_is_chainable()
+assert a is a.this_is_chainable().this_is_chainable()
 assert a.has_return_value() == 4
 ```
 
