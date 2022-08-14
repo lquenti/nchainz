@@ -1,9 +1,13 @@
 [tool.poetry]
 name = "nchainz"
-version = "0.1.0"
+version = "1.0.0"
 description = "Like 2 Chainz but better!"
 authors = ["Lars Quentin <lars@lquenti.de>"]
 license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/lquenti/nchainz"
+repository = "https://github.com/lquenti/nchainz"
+
 
 [tool.poetry.dependencies]
 python = "^3.7"
